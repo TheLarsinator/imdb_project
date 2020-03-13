@@ -77,4 +77,39 @@ public class OutputDatabaseController extends DatabaseController {
             return;
         }
     }
+
+    public void printAllSeriesWithIdAndTitle(BufferedReader reader){
+        try {
+            Statement stmt = conn.createStatement();
+            String sql = "SELECT * FROM Series INNER JOIN mediaitem ON Series.mediaitemid=mediaitem.mediaitemid";
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("----------------------");
+            while(rs.next()) {
+                System.out.println(rs.getString("mediaitemid") + ": " + rs.getString("title"));
+            }
+            System.out.println("----------------------");
+
+        } catch (Exception e) {
+            System.out.println("db error during select of series= "+e);
+            System.out.println("Try again");
+            return;
+        }
+    }
+
+    public void printAllEpisodesInSeriesWithIdAndTitle(BufferedReader reader, int seriesID){
+        try {
+            Statement stmt = conn.createStatement();
+            String sql = "SELECT * FROM Episode INNER JOIN mediaitem ON Episode.mediaitemid=mediaitem.mediaitemid where seriesid=" + seriesID;
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("----------------------");
+            while(rs.next()) {
+                System.out.println(rs.getString("mediaitemid") + ": " + rs.getString("title"));
+            }
+            System.out.println("----------------------");
+        } catch (Exception e) {
+            System.out.println("db error during select of episodes= "+e);
+            System.out.println("Try again");
+            return;
+        }
+    }
 }

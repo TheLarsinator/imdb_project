@@ -63,7 +63,16 @@ public class InputDatabaseController extends DatabaseController {
                 }
                 case 3:{
                     mediaType = "Episode";
-                    break;
+                    System.out.println("Episode number:");
+                    int episodeNr = Integer.parseInt(getUserInput(reader));
+                    System.out.println("Season number:");
+                    int seasonNr = Integer.parseInt(getUserInput(reader));
+                    System.out.println("Select Series, enter the ID:");
+                    outCtrl.printAllSeriesWithIdAndTitle(reader);
+                    int seriesID = Integer.parseInt(getUserInput(reader));
+                    Episode episode = new Episode(title, releaseDate, storyline, genre, mediaType, companyName, episodeNr, seasonNr, seriesID);
+                    createEntry(episode);
+                    return episode.mediaItemID;
                 }
             }
         }
@@ -81,6 +90,19 @@ public class InputDatabaseController extends DatabaseController {
             createEntry(company);
         }
         return company;
+    }
+
+    public User createOrFindUser(BufferedReader reader, String username){
+        User user = new User(username);
+        user.initialize(conn);
+        if(user.getEmail() != null){
+            return user;
+        } else {
+            System.out.println("Email adress for registration:");
+            user.setEmail(getUserInput(reader));
+            createEntry(user);
+        }
+        return user;
     }
 
 

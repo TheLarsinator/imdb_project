@@ -15,12 +15,17 @@ public class MovieDatabase {
         int choice;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
+        System.out.println("Welcome to LV Movie Database");
+        System.out.println("Use the commandline to interact with the system");
+        System.out.println("Date format: YYYY-MM-DD, must be followed!");
+
         while(true) {
             System.out.println("What do you want to do?");
             System.out.println("1: Find all roles of an actor");
             System.out.println("2: Find all movies for an actor");
             System.out.println("3: Find the most productive company for a genre");
-            System.out.println("4: Insert Movie");
+            System.out.println("4: Insert new Movie, Series or Episode");
+            System.out.println("5: Leave a review on an Episode");
             System.out.println("6: Exit");
 
             try {
@@ -63,29 +68,29 @@ public class MovieDatabase {
                     }
                     break;
                 }
-
+                case 5:{
+                    System.out.println("What is your username?");
+                    String username = DatabaseController.getUserInput(reader);
+                    User user = inCtrl.createOrFindUser(reader, username);
+                    System.out.println("Select Series, enter the ID:");
+                    outCtrl.printAllSeriesWithIdAndTitle(reader);
+                    int seriesID = Integer.parseInt(DatabaseController.getUserInput(reader));
+                    System.out.println("Select Episode, enter the ID:");
+                    outCtrl.printAllEpisodesInSeriesWithIdAndTitle(reader, seriesID);
+                    int episodeID = Integer.parseInt(DatabaseController.getUserInput(reader));
+                    System.out.println("Rate episode from 1 to 10");
+                    int rating = Integer.parseInt(DatabaseController.getUserInput(reader));
+                    System.out.println("Leave a comment");
+                    String comment = DatabaseController.getUserInput(reader);
+                    MediaReview review = new MediaReview(username, episodeID, rating, comment);
+                    inCtrl.createEntry(review);
+                    break;
+                }
                 case 6:{
                     System.out.println("Thanks for using LVMDB, see you again!");
                     return;
                 }
             }
         }
-
-/*        Person pers = new Person("1982-04-09", "Jay Baruchel", "Canadian");
-        Movie movie = new Movie("How to train your dragon", "2010-03-26", "Toothless is a cute dragon", "Family", "Cinema", 98);
-        Series series = new Series("Game of Thrones", "2009-04-01", "Who will sit on the throne?", "fantasy", 2009);
-        ctrl.createEntry(pers);
-        ctrl.createEntry(movie);
-        ctrl.createEntry(series);
-        series.endSeries(2019);
-        ctrl.updateEntry(series);
-
-        ActorInMedia actor = new ActorInMedia(pers.personID, movie.mediaItemID, "Hiccup");
-        ctrl.createEntry(actor);
-
-        System.out.println(actor.role);
-        System.out.println(pers.personID);
-        System.out.println(movie.mediaItemID);
-        System.out.println("Done!");*/
     }
 }
