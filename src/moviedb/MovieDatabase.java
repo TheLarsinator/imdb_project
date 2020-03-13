@@ -18,8 +18,9 @@ public class MovieDatabase {
         while(true) {
             System.out.println("What do you want to do?");
             System.out.println("1: Find all roles of an actor");
-            System.out.println("2: Insert Movie");
-            System.out.println("3: Exit");
+            System.out.println("2: Find all movies for an actor");
+            System.out.println("4: Insert Movie");
+            System.out.println("6: Exit");
 
             try {
                 choice = Integer.valueOf(reader.readLine());
@@ -34,6 +35,11 @@ public class MovieDatabase {
                     break;
                 }
                 case 2:{
+                    System.out.println("Which actor do you want to list all movies for?");
+                    outCtrl.listAllMoviesForAnActor(DatabaseController.getUserInput(reader));
+                    break;
+                }
+                case 4:{
                     int mediaItemID = inCtrl.createMediaType(reader, outCtrl);
                     String userChoice = "";
                     System.out.println("Now, register actors");
@@ -49,6 +55,11 @@ public class MovieDatabase {
                         System.out.println("If you want to add a producer, type yes, if all actors are added, type no!");
                         userChoice = DatabaseController.getUserInput(reader);
                     }
+                }
+
+                case 6:{
+                    System.out.println("Thanks for using LVMDB, see you again!");
+                    return;
                 }
             }
         }
