@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba9601b9-0afc-42ff-a791-14fbbd4011ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/moviedb/OutputDatabaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moviedb/DatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/DatabaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/moviedb/InputDatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/InputDatabaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moviedb/MovieDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/MovieDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/ActorInMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/ActorInMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/MusicProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/MusicProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/ProducerInMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/ProducerInMedia.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +96,7 @@
       <updated>1583917225978</updated>
       <workItem from="1583917228796" duration="13782000" />
       <workItem from="1584019348478" duration="5981000" />
-      <workItem from="1584095020373" duration="8050000" />
+      <workItem from="1584095020373" duration="9151000" />
     </task>
     <servers />
   </component>
