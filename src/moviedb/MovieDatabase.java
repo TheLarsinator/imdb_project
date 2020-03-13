@@ -1,11 +1,13 @@
 package moviedb;
 
+import moviedb.databasecontrollers.DatabaseController;
+import moviedb.databasecontrollers.InputDatabaseController;
+import moviedb.databasecontrollers.OutputDatabaseController;
 import moviedb.tables.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.Date;
 
 public class MovieDatabase {
 

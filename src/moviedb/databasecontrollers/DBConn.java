@@ -1,4 +1,4 @@
-package moviedb;
+package moviedb.databasecontrollers;
 
 import java.sql.*;
 import java.util.Properties;

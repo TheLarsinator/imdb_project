@@ -1,6 +1,6 @@
-package moviedb;
+package moviedb.databasecontrollers;
 
-import moviedb.tables.Person;
+import moviedb.tables.ActiveDomainObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,7 +40,7 @@ public class DatabaseController extends DBConn {
         return true;
     }
 
-    protected static String getUserInput(BufferedReader reader){
+    public static String getUserInput(BufferedReader reader){
         try{
             String out = reader.readLine();
             return out;

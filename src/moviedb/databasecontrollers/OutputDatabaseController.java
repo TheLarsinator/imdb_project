@@ -1,9 +1,8 @@
-package moviedb;
+package moviedb.databasecontrollers;
 
 import moviedb.tables.Person;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.Statement;
 

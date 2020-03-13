@@ -1,7 +1,5 @@
 package moviedb.tables;
 
-import moviedb.ActiveDomainObject;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;

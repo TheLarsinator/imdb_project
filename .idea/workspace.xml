@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="imdb_project:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ba9601b9-0afc-42ff-a791-14fbbd4011ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/moviedb/tables/Episode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/moviedb/tables/MediaReview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/moviedb/tables/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/imdb_project_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/InputDatabaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/imdb_project/moviedb/InputDatabaseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/OutputDatabaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/imdb_project/moviedb/OutputDatabaseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moviedb/InputDatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/InputDatabaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/ActiveDomainObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/DBConn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/DatabaseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/InputDatabaseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/MovieDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/imdb_project/moviedb/MovieDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/OutputDatabaseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/ActorInMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/ActorInMedia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/MediaItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/MediaItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/MusicProducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/MusicProducer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/ProducerInMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/ProducerInMedia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/Soundtrack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/imdb_project/moviedb/tables/Soundtrack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/ActiveDomainObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/ActiveDomainObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/DBConn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/databasecontrollers/DBConn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/DatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/databasecontrollers/DatabaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/InputDatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/databasecontrollers/InputDatabaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/moviedb/MovieDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/MovieDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moviedb/OutputDatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/OutputDatabaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/OutputDatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/databasecontrollers/OutputDatabaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/ActorInMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/ActorInMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/MediaItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/MediaItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/MediaReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/MediaReview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/MusicProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/MusicProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/ProducerInMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/ProducerInMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/Soundtrack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/Soundtrack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moviedb/tables/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moviedb/tables/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +80,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.19.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -103,7 +130,7 @@
       <updated>1583917225978</updated>
       <workItem from="1583917228796" duration="13782000" />
       <workItem from="1584019348478" duration="5981000" />
-      <workItem from="1584095020373" duration="19835000" />
+      <workItem from="1584095020373" duration="21025000" />
     </task>
     <servers />
   </component>
@@ -126,6 +153,10 @@
     <state x="2685" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584129952924" />
     <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583944976588" />
     <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583918413249" />
+    <state x="2631" y="372" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584131015846">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2631" y="372" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584131015846" />
     <state x="2676" y="406" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584099305016">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -134,28 +165,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="262" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583938011611" />
-    <state width="1877" height="453" key="GridCell.Tab.0.bottom" timestamp="1584130766152">
+    <state width="1877" height="343" key="GridCell.Tab.0.bottom" timestamp="1584132041616">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="453" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584130766152" />
+    <state width="1877" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584132041616" />
     <state width="1877" height="238" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583957716213" />
     <state width="1877" height="548" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583939557347" />
-    <state width="1877" height="453" key="GridCell.Tab.0.center" timestamp="1584130766152">
+    <state width="1877" height="343" key="GridCell.Tab.0.center" timestamp="1584132041616">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="453" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584130766152" />
+    <state width="1877" height="343" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584132041616" />
     <state width="1877" height="238" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583957716213" />
     <state width="1877" height="548" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583939557347" />
-    <state width="1877" height="453" key="GridCell.Tab.0.left" timestamp="1584130766152">
+    <state width="1877" height="343" key="GridCell.Tab.0.left" timestamp="1584132041616">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="453" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584130766152" />
+    <state width="1877" height="343" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584132041616" />
     <state width="1877" height="238" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583957716213" />
     <state width="1877" height="548" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583939557346" />
-    <state width="1877" height="453" key="GridCell.Tab.0.right" timestamp="1584130766152">
+    <state width="1877" height="343" key="GridCell.Tab.0.right" timestamp="1584132041616">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="453" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584130766152" />
+    <state width="1877" height="343" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584132041616" />
     <state width="1877" height="238" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583957716213" />
     <state width="1877" height="548" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583939557347" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1584130450589">
@@ -178,17 +209,19 @@
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584130450589" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583955322486" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1583937730575">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2381" y="163" key="SettingsEditor" timestamp="1584131037372">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2381" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584131037372" />
     <state x="461" y="163" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583937730575" />
     <state x="2526" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584100448551">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2526" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584100448551" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1583955987774">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2536" y="240" width="672" height="677" key="run.anything.popup" timestamp="1584131797825">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2536" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584131797825" />
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583955987774" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583917293495">
       <screen x="0" y="0" width="1920" height="1040" />

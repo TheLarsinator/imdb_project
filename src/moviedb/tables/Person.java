@@ -1,8 +1,5 @@
 package moviedb.tables;
 
-import com.mysql.cj.protocol.Resultset;
-import moviedb.ActiveDomainObject;
-
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;

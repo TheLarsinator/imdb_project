@@ -1,4 +1,4 @@
-package moviedb;
+package moviedb.tables;
 
 import java.sql.Connection;
 
