@@ -9,12 +9,12 @@ import java.sql.Statement;
 
 public class ActorInMedia extends ActiveDomainObject {
 
-    int personID;
+    String name;
     int mediaItemID;
     public String role;
 
-    public ActorInMedia(int personID, int mediaItemID, String role){
-        this.personID = personID;
+    public ActorInMedia(String name, int mediaItemID, String role){
+        this.name = name;
         this.mediaItemID = mediaItemID;
         this.role = role;
     }
@@ -23,7 +23,7 @@ public class ActorInMedia extends ActiveDomainObject {
     public void initialize(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from ActorInMedia where personID=" + personID + " and mediaItemID =" + mediaItemID);
+            ResultSet rs = stmt.executeQuery("select * from ActorInMedia where name='" + name + "' and mediaItemID =" + mediaItemID);
             while (rs.next()) {
                 this.role =  rs.getString("role");
             }
@@ -43,7 +43,7 @@ public class ActorInMedia extends ActiveDomainObject {
     public void save(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            String sqlStmt = "insert into ActorInMedia values ("+personID+","+mediaItemID+",'"+role+"')";
+            String sqlStmt = "insert into ActorInMedia values ('"+name+"',"+mediaItemID+",'"+role+"')";
             stmt.executeUpdate(sqlStmt);
         } catch (Exception e) {
             System.out.println("db error during insert of ActorInMedia="+e);
@@ -55,7 +55,7 @@ public class ActorInMedia extends ActiveDomainObject {
     public void update(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            String sqlStmt = "UPDATE ActorInMedia set role='"+role+"' where personID=" + personID + ", mediaItemID=" + mediaItemID + ")";
+            String sqlStmt = "UPDATE ActorInMedia set role='"+role+"' where name='" + name + "', mediaItemID=" + mediaItemID + ")";
             stmt.executeUpdate(sqlStmt);
         } catch (Exception e) {
             System.out.println("db error during update of ActorInMedia="+e);

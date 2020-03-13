@@ -8,12 +8,12 @@ import java.sql.Statement;
 
 public class MusicProducer extends ActiveDomainObject {
 
-    int personID;
+    String name;
     int soundtrackID;
     public String role;
 
-    public MusicProducer(int personID, int soundtrackID, String role){
-        this.personID = personID;
+    public MusicProducer(String name, int soundtrackID, String role){
+        this.name = name;
         this.soundtrackID = soundtrackID;
         this.role = role;
     }
@@ -22,7 +22,7 @@ public class MusicProducer extends ActiveDomainObject {
     public void initialize(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from ProducerInMedia where personID=" + personID + " and soundtrackID =" + soundtrackID);
+            ResultSet rs = stmt.executeQuery("select * from ProducerInMedia where name='" + name + "' and soundtrackID =" + soundtrackID);
             while (rs.next()) {
                 this.role =  rs.getString("role");
             }
@@ -42,7 +42,7 @@ public class MusicProducer extends ActiveDomainObject {
     public void save(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            String sqlStmt = "insert into ProducerInMedia values ("+personID+","+soundtrackID+",'"+role+"')";
+            String sqlStmt = "insert into ProducerInMedia values ('"+name+"',"+soundtrackID+",'"+role+"')";
             stmt.executeUpdate(sqlStmt);
         } catch (Exception e) {
             System.out.println("db error during insert of ProducerInMedia="+e);
@@ -54,7 +54,7 @@ public class MusicProducer extends ActiveDomainObject {
     public void update(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            String sqlStmt = "UPDATE ProducerInMedia set role='"+role+"' where personID=" + personID + ", soundtrackID=" + soundtrackID + ")";
+            String sqlStmt = "UPDATE ProducerInMedia set role='"+role+"' where name='" + name + "', soundtrackID=" + soundtrackID + ")";
             stmt.executeUpdate(sqlStmt);
         } catch (Exception e) {
             System.out.println("db error during update of ProducerInMedia="+e);

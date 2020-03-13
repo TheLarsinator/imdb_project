@@ -8,12 +8,12 @@ import java.sql.Statement;
 
 public class ProducerInMedia extends ActiveDomainObject {
 
-    int personID;
+    String name;
     int mediaItemID;
     public String role;
 
-    public ProducerInMedia(int personID, int mediaItemID, String role){
-        this.personID = personID;
+    public ProducerInMedia(String name, int mediaItemID, String role){
+        this.name = name;
         this.mediaItemID = mediaItemID;
         this.role = role;
     }
@@ -22,7 +22,7 @@ public class ProducerInMedia extends ActiveDomainObject {
     public void initialize(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from ProducerInMedia where personID=" + personID + " and mediaItemID =" + mediaItemID);
+            ResultSet rs = stmt.executeQuery("select * from ProducerInMedia where name=" + name + " and mediaItemID =" + mediaItemID);
             while (rs.next()) {
                 this.role =  rs.getString("role");
             }
@@ -42,7 +42,7 @@ public class ProducerInMedia extends ActiveDomainObject {
     public void save(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            String sqlStmt = "insert into ProducerInMedia values ("+personID+","+mediaItemID+",'"+role+"')";
+            String sqlStmt = "insert into ProducerInMedia values ('"+name+"',"+mediaItemID+",'"+role+"')";
             stmt.executeUpdate(sqlStmt);
         } catch (Exception e) {
             System.out.println("db error during insert of ProducerInMedia="+e);
@@ -54,7 +54,7 @@ public class ProducerInMedia extends ActiveDomainObject {
     public void update(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            String sqlStmt = "UPDATE ProducerInMedia set role='"+role+"' where personID=" + personID + ", mediaItemID=" + mediaItemID + ")";
+            String sqlStmt = "UPDATE ProducerInMedia set role='"+role+"' where name='" + name + "', mediaItemID=" + mediaItemID + ")";
             stmt.executeUpdate(sqlStmt);
         } catch (Exception e) {
             System.out.println("db error during update of ProducerInMedia="+e);

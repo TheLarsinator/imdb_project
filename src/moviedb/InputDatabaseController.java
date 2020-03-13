@@ -13,7 +13,7 @@ public class InputDatabaseController extends DatabaseController {
         super();
     }
 
-    public boolean createPerson(BufferedReader reader){
+    public boolean createPerson(BufferedReader reader, OutputDatabaseController outCtrl){
         String name;
         String birthDate;
         String nationality;
@@ -21,22 +21,19 @@ public class InputDatabaseController extends DatabaseController {
         System.out.println("Creating person...");
         System.out.println("Insert person name:");
         name = getUserInput(reader);
+
+        //Check if this person already exists, should be primary key but too late to change that now
+        Person pers = outCtrl.findPersonByName(name);
+        if(pers.getNationality() != null){
+            System.out.println("Person already exists. Choose new option");
+            return true;
+        }
+
         System.out.println("Insert person birth date:");
         birthDate = getUserInput(reader);
         System.out.println("Insert person nationality:");
         nationality = getUserInput(reader);
 
         return createEntry(new Person(birthDate, name, nationality));
-    }
-
-
-    private String getUserInput(BufferedReader reader){
-        try{
-            String out = reader.readLine();
-            return out;
-        } catch (IOException e){
-            System.out.println("Failed to read user input");
-            return "";
-        }
     }
 }

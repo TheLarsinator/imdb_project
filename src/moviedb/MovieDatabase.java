@@ -10,7 +10,8 @@ import java.sql.Date;
 public class MovieDatabase {
 
     public static void main(String[] args){
-        InputDatabaseController ctrl = new InputDatabaseController();
+        InputDatabaseController inCtrl = new InputDatabaseController();
+        OutputDatabaseController outCtrl = new OutputDatabaseController();
         int choice;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -28,7 +29,7 @@ public class MovieDatabase {
             }
             switch(choice){
                 case 1:{
-                    ctrl.createPerson(reader);
+                    inCtrl.createPerson(reader, outCtrl);
                     break;
                 }
             }

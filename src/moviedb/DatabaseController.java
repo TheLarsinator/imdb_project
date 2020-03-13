@@ -2,10 +2,12 @@ package moviedb;
 
 import moviedb.tables.Person;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class DatabaseController extends DBConn {
-    private Person pers;
+
     public DatabaseController(){
         connect();
         try {
@@ -38,4 +40,13 @@ public class DatabaseController extends DBConn {
         return true;
     }
 
+    protected String getUserInput(BufferedReader reader){
+        try{
+            String out = reader.readLine();
+            return out;
+        } catch (IOException e){
+            System.out.println("Failed to read user input");
+            return "";
+        }
+    }
 }

@@ -11,16 +11,16 @@ import java.util.Calendar;
 
 public class Person extends ActiveDomainObject {
 
-    private static int NO_ID = -1;
-
-    public int personID;
+    String name;
     int birthYear;
     Date birthDate;
     String nationality;
-    String name;
+
+    public Person(String name){
+        this.name = name;
+    }
 
     public Person(String birthDate, String name, String nationality){
-        this.personID = NO_ID;
         this.birthDate = Date.valueOf(birthDate);
         Calendar cal = Calendar.getInstance();
         cal.setTime(this.birthDate);
@@ -33,7 +33,8 @@ public class Person extends ActiveDomainObject {
     public void initialize(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from Person where personID=" + personID);
+            String sql = "select * from Person where name='" + name + "'";
+            ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 this.name =  rs.getString("name");
                 this.nationality =  rs.getString("nationality");
@@ -56,11 +57,8 @@ public class Person extends ActiveDomainObject {
     public void save(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            String sqlStmt = "insert into Person values (NULL,"+birthYear+",'"+birthDate+"','"+nationality+"','" + name+"')";
-            stmt.executeUpdate(sqlStmt, Statement.RETURN_GENERATED_KEYS);
-            ResultSet keys = stmt.getGeneratedKeys();
-            if(keys.next())
-                personID = keys.getInt(1);
+            String sqlStmt = "insert into Person values ('"+name+"',"+birthYear+",'"+birthDate+"','"+nationality+"')";
+            stmt.executeUpdate(sqlStmt);
         } catch (Exception e) {
             System.out.println("db error during insert of Person="+e);
             return;
@@ -70,5 +68,21 @@ public class Person extends ActiveDomainObject {
     @Override
     public void update(Connection conn) {
 
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public String getNationality() {
+        return nationality;
     }
 }
