@@ -52,6 +52,5 @@ public class Series extends MediaItem {
             System.out.println("db error during update of Series="+e);
             return;
         }
-
     }
 }

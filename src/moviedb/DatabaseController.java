@@ -16,19 +16,6 @@ public class DatabaseController extends DBConn {
         }
     }
 
-    public boolean createPerson(Person pers){
-        this.pers = pers;
-        pers.save(conn);
-        try {
-            conn.commit();
-        } catch (SQLException e) {
-            System.out.println("db error during commit of LagAvtaleCtrl="+e);
-            return false;
-        }
-        return true;
-    }
-
-
     public boolean createEntry(ActiveDomainObject obj){
         obj.save(conn);
         try {
