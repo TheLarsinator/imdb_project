@@ -33,6 +33,7 @@ public class InputDatabaseController extends DatabaseController {
         genre = getUserInput(reader);
         System.out.println("Which company has release the mediaitem?");
         companyName = getUserInput(reader);
+        createOrFindCompany(reader, outCtrl, companyName);
 
         while(mediaType == "") {
             System.out.println("Is it a:");
@@ -48,7 +49,7 @@ public class InputDatabaseController extends DatabaseController {
                     String producedFor = getUserInput(reader);
                     System.out.println("Movie lenght in minutes?");
                     int length = Integer.parseInt(getUserInput(reader));
-                    Movie mov = new Movie(title, releaseDate, storyline, genre, mediaType, producedFor, length);
+                    Movie mov = new Movie(title, releaseDate, storyline, genre, mediaType, companyName, producedFor, length);
                     createEntry(mov);
                     return mov.mediaItemID;
                 }
@@ -56,7 +57,7 @@ public class InputDatabaseController extends DatabaseController {
                     mediaType = "Series";
                     System.out.println("What is the starting year of the series?");
                     int startYear = Integer.parseInt(getUserInput(reader));
-                    Series series = new Series(title, releaseDate, storyline, genre, mediaType, startYear);
+                    Series series = new Series(title, releaseDate, storyline, genre, mediaType, startYear, companyName);
                     createEntry(series);
                     return series.mediaItemID;
                 }
@@ -69,7 +70,18 @@ public class InputDatabaseController extends DatabaseController {
         return -1;
     }
 
-
+    public Company createOrFindCompany(BufferedReader reader, OutputDatabaseController outCtrl, String companyName){
+        Company company = new Company(companyName);
+        company.initialize(conn);
+        if(company.getCountry() != null){
+            return company;
+        } else {
+            System.out.println("Origin country for " + companyName);
+            company.setCountry(getUserInput(reader));
+            createEntry(company);
+        }
+        return company;
+    }
 
 
     public Person createPerson(BufferedReader reader, OutputDatabaseController outCtrl){

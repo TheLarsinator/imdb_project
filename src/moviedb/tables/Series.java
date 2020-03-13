@@ -7,8 +7,8 @@ public class Series extends MediaItem {
     int startYear;
     int endYear;
 
-    public Series(String title, String releaseDate, String storyline, String genre, String mediaType, int startYear) {
-        super(title, releaseDate, storyline, genre, mediaType);
+    public Series(String title, String releaseDate, String storyline, String genre, String mediaType, int startYear, String companyName) {
+        super(title, releaseDate, storyline, genre, mediaType, companyName);
         this.startYear = startYear;
     }
 

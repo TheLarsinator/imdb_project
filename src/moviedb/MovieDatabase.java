@@ -19,6 +19,7 @@ public class MovieDatabase {
             System.out.println("What do you want to do?");
             System.out.println("1: Find all roles of an actor");
             System.out.println("2: Find all movies for an actor");
+            System.out.println("3: Find the most productive company for a genre");
             System.out.println("4: Insert Movie");
             System.out.println("6: Exit");
 
@@ -39,6 +40,11 @@ public class MovieDatabase {
                     outCtrl.listAllMoviesForAnActor(DatabaseController.getUserInput(reader));
                     break;
                 }
+                case 3:{
+                    System.out.println("Which genre do you want to find the most productive company for?");
+                    outCtrl.findCompanyWithMostMediaItemsInGenre(DatabaseController.getUserInput(reader));
+                    break;
+                }
                 case 4:{
                     int mediaItemID = inCtrl.createMediaType(reader, outCtrl);
                     String userChoice = "";
@@ -55,6 +61,7 @@ public class MovieDatabase {
                         System.out.println("If you want to add a producer, type yes, if all actors are added, type no!");
                         userChoice = DatabaseController.getUserInput(reader);
                     }
+                    break;
                 }
 
                 case 6:{

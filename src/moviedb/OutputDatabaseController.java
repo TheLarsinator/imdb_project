@@ -16,9 +16,6 @@ public class OutputDatabaseController extends DatabaseController {
     public Person findPersonByName(String name){
         Person outPers = new Person(name);
         outPers.initialize(conn);
-        System.out.println("Finding person status:");
-        System.out.println(outPers.getName());
-        System.out.println(outPers.getNationality());
         return outPers;
     }
 
@@ -48,6 +45,29 @@ public class OutputDatabaseController extends DatabaseController {
             System.out.println(name + " plays in the following movies:");
             while (rs.next()) {
                 System.out.println(rs.getString("title"));
+            }
+            System.out.println("----------------------");
+
+        } catch (Exception e) {
+            System.out.println("db error during select of roles= "+e);
+            System.out.println("Try again");
+            return;
+        }
+    }
+
+    public void findCompanyWithMostMediaItemsInGenre(String genre){
+        try {
+            Statement stmt = conn.createStatement();
+            String sql = "SELECT company.CompanyName, mediaItem.Genre, COUNT(*) " +
+                    "FROM company INNER JOIN mediaitem " +
+                    "ON company.CompanyName=mediaitem.CompanyName " +
+                    "WHERE mediaItem.genre='" + genre + "' " +
+                    "GROUP BY companyName ORDER BY 3 DESC";
+            System.out.println(sql);
+            System.out.println(" ");
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                System.out.println(rs.getString("companyname") + " creates the most mediaitems in the genre " + genre);
             }
             System.out.println("----------------------");
 
