@@ -18,11 +18,12 @@ public class MediaItem extends ActiveDomainObject {
     String genre;
     String companyName;
     int soundtrackID;
+    String mediaType;
 
     private static int NO_ID = -1;
     private static String NO_NAME = "NO_NAME";
 
-    public MediaItem(String title, String releaseDate, String storyline, String genre){
+    public MediaItem(String title, String releaseDate, String storyline, String genre, String mediaType){
         this.mediaItemID = NO_ID;
         this.title = title;
         this.releaseDate = Date.valueOf(releaseDate);
@@ -33,6 +34,7 @@ public class MediaItem extends ActiveDomainObject {
         this.genre = genre;
         this.companyName = NO_NAME;
         this.soundtrackID = NO_ID;
+        this.mediaType = mediaType;
     }
 
     @Override
@@ -64,7 +66,7 @@ public class MediaItem extends ActiveDomainObject {
     public void save(Connection conn) {
         try {
             Statement stmt = conn.createStatement();
-            String sqlStmt = "insert into Mediaitem values (NULL,'"+title+"',"+releaseYear+",'"+releaseDate+"','"+storyline+"','"+genre+"',NULL,NULL)"; //TODO: Add company and soundteck
+            String sqlStmt = "insert into Mediaitem values (NULL,'"+title+"',"+releaseYear+",'"+releaseDate+"','"+storyline+"','"+genre+"',NULL,NULL,'"+ mediaType + "')"; //TODO: Add company and soundteck
             stmt.executeUpdate(sqlStmt, Statement.RETURN_GENERATED_KEYS);
             ResultSet keys = stmt.getGeneratedKeys();
             if(keys.next())

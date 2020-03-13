@@ -7,8 +7,8 @@ public class Movie extends MediaItem {
     String producedFor;
     int length;
 
-    public Movie(String title, String releaseDate, String storyline, String genre, String producedFor, int length) {
-        super(title, releaseDate, storyline, genre);
+    public Movie(String title, String releaseDate, String storyline, String genre, String mediaType, String producedFor, int length) {
+        super(title, releaseDate, storyline, genre, mediaType);
         this.producedFor = producedFor;
         this.length = length;
     }

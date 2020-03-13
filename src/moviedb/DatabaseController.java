@@ -40,7 +40,7 @@ public class DatabaseController extends DBConn {
         return true;
     }
 
-    protected String getUserInput(BufferedReader reader){
+    protected static String getUserInput(BufferedReader reader){
         try{
             String out = reader.readLine();
             return out;

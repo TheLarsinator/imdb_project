@@ -1,8 +1,6 @@
 package moviedb;
 
-import moviedb.tables.ActorInMedia;
-import moviedb.tables.Person;
-import moviedb.tables.ProducerInMedia;
+import moviedb.tables.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,6 +12,65 @@ public class InputDatabaseController extends DatabaseController {
     public InputDatabaseController(){
         super();
     }
+
+    public int createMediaType(BufferedReader reader, OutputDatabaseController outCtrl){
+        String title;
+        String releaseDate;
+        String storyline;
+        String genre;
+        String companyName;
+        int soundtrackID;
+        String mediaType = "";
+
+        System.out.println("Creating new mediaitem:");
+        System.out.println("What is the title?");
+        title = getUserInput(reader);
+        System.out.println("What is the release date?");
+        releaseDate = getUserInput(reader);
+        System.out.println("Short summary of the movie:");
+        storyline = getUserInput(reader);
+        System.out.println("What genre does the mediaitem belong to?");
+        genre = getUserInput(reader);
+        System.out.println("Which company has release the mediaitem?");
+        companyName = getUserInput(reader);
+
+        while(mediaType == "") {
+            System.out.println("Is it a:");
+            System.out.println("1: Movie");
+            System.out.println("2: Series");
+            System.out.println("3: Episode");
+
+            int a = Integer.parseInt(getUserInput(reader));
+            switch(a){
+                case 1:{
+                    mediaType = "Movie";
+                    System.out.println("What is the production format of the movie? Ie. Cinema, streaming etc.");
+                    String producedFor = getUserInput(reader);
+                    System.out.println("Movie lenght in minutes?");
+                    int length = Integer.parseInt(getUserInput(reader));
+                    Movie mov = new Movie(title, releaseDate, storyline, genre, mediaType, producedFor, length);
+                    createEntry(mov);
+                    return mov.mediaItemID;
+                }
+                case 2:{
+                    mediaType = "Series";
+                    System.out.println("What is the starting year of the series?");
+                    int startYear = Integer.parseInt(getUserInput(reader));
+                    Series series = new Series(title, releaseDate, storyline, genre, mediaType, startYear);
+                    createEntry(series);
+                    return series.mediaItemID;
+                }
+                case 3:{
+                    mediaType = "Episode";
+                    break;
+                }
+            }
+        }
+        return -1;
+    }
+
+
+
 
     public Person createPerson(BufferedReader reader, OutputDatabaseController outCtrl){
         String name;

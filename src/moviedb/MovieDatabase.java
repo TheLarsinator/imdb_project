@@ -32,6 +32,23 @@ public class MovieDatabase {
                     inCtrl.createPerson(reader, outCtrl);
                     break;
                 }
+                case 2:{
+                    int mediaItemID = inCtrl.createMediaType(reader, outCtrl);
+                    String userChoice = "";
+                    System.out.println("Now, register actors");
+                    while(!userChoice.equals("no")){
+                        inCtrl.givePersonActingRoleInMediaItem(reader, outCtrl, mediaItemID);
+                        System.out.println("If you want to add another Actor, type yes, if all actors are added, type no!");
+                        userChoice = DatabaseController.getUserInput(reader);
+                    }
+                    userChoice = "";
+                    System.out.println("Now, register producers");
+                    while(!userChoice.equals("no")){
+                        inCtrl.givePersonProductionRoleInMediaItem(reader, outCtrl, mediaItemID);
+                        System.out.println("If you want to add a producer, type yes, if all actors are added, type no!");
+                        userChoice = DatabaseController.getUserInput(reader);
+                    }
+                }
             }
         }
 
