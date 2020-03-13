@@ -17,7 +17,7 @@ public class MovieDatabase {
 
         while(true) {
             System.out.println("What do you want to do?");
-            System.out.println("1: Insert Person");
+            System.out.println("1: Find all roles of an actor");
             System.out.println("2: Insert Movie");
             System.out.println("3: Exit");
 
@@ -29,7 +29,8 @@ public class MovieDatabase {
             }
             switch(choice){
                 case 1:{
-                    inCtrl.createPerson(reader, outCtrl);
+                    System.out.println("Which actor do you want to list all roles for?");
+                    outCtrl.listAllRolesForAPerson(DatabaseController.getUserInput(reader));
                     break;
                 }
                 case 2:{

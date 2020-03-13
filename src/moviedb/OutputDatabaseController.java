@@ -21,4 +21,20 @@ public class OutputDatabaseController extends DatabaseController {
         System.out.println(outPers.getNationality());
         return outPers;
     }
+
+    public void listAllRolesForAPerson(String name){
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("select role from ActorInMedia where name='" + name + "'");
+            System.out.println(name + " plays the following roles:");
+            while (rs.next()) {
+                System.out.println(rs.getString("role"));
+            }
+
+        } catch (Exception e) {
+            System.out.println("db error during select of roles= "+e);
+            System.out.println("Try again");
+            return;
+        }
+    }
 }
